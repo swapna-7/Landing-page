@@ -34,8 +34,8 @@ function Testimonials() {
         },
       ];
   return (
-    <div className="h-[20rem] rounded-md flex flex-col antialiased   items-center justify-center  overflow-hidden">
-      <h1 className='text-white font-serif font-semibold text-3xl '>TESTIMONIALS</h1>  
+    <div className="h-[20rem] rounded-md flex flex-col antialiased   items-center justify-center  overflow-hidden m-10">
+      <h1 className='text-white font-serif font-semibold text-3xl mb-5'>TESTIMONIALS</h1>  
       <InfiniteMovingCards
         items={testimonials}
         direction="right"

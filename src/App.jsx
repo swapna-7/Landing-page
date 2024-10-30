@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import NavBar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import Scroll from "./components/Scroll.jsx";
+
 
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
         <Route path="/" element={<Home/>} />
 =        </Routes>
     </BrowserRouter>
-    {/* <Footer /> */}
+    <Footer />
     </>
   )
 }
