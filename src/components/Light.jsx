@@ -1,8 +1,9 @@
 import React from 'react'
 import { Spotlight } from './ui/spotlight'
-import headphone from '../assets/headphone.png'
-import { motion } from 'framer-motion'
-import { Rotate3D } from 'lucide-react'
+import headphone from './../assets/headphone.png'
+
+// import { motion } from 'framer-motion'
+// import { Rotate3D } from 'lucide-react'
 function Light() {
   return (
     <div>
