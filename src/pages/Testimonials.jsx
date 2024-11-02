@@ -1,7 +1,17 @@
 import React from 'react'
 import { InfiniteMovingCards } from '../components/ui/infinite-moving-cards'
+import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+
 
 function Testimonials() {
+  const testimonialsRef = useRef(null);
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash === "#testimonials") {
+      testimonialsRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
     const testimonials = [
         {
           quote:
@@ -34,8 +44,8 @@ function Testimonials() {
         },
       ];
   return (
-    <div className="h-[20rem] rounded-md flex flex-col antialiased   items-center justify-center  overflow-hidden m-10">
-      <h1 className='text-white font-serif font-semibold text-3xl mb-5'>TESTIMONIALS</h1>  
+    <div ref={testimonialsRef} className="h-[20rem] rounded-md flex flex-col antialiased   items-center justify-center  overflow-hidden m-10">
+      <h1 className='text-white font-serif font-semibold text-3xl m-2' >TESTIMONIALS</h1>  
       <InfiniteMovingCards
         items={testimonials}
         direction="right"

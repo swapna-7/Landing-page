@@ -18,8 +18,18 @@ import a4 from '../assets/a4.jpg'
 import a5 from '../assets/a5.jpg'
 import a6 from '../assets/a6.jpg'
 import a7 from '../assets/a7.jpg'
+import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+
 
 function Recommended() {
+  const recommendedRef = useRef(null);
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash === "#recommended") {
+      recommendedRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
     const items = [
         {
           title: "The Dawn of Innovation",
@@ -66,7 +76,7 @@ function Recommended() {
         },
       ];
       return (
-          <div>
+          <div ref={recommendedRef}>
       <h1 className='text-white font-serif font-semibold text-3xl text-center m-10'>RECOMMENDED</h1>  
       <BentoGrid className="max-w-4xl mx-auto mb-8">
       {items.map((item, i) => (

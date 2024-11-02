@@ -6,14 +6,22 @@ import b3 from "../assets/b3.jpg";
 import b4 from "../assets/b4.jpg";
 import b5 from "../assets/b5.jpg";
 import b6 from "../assets/b6.jpg";
-
+import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function Products() {
+  const productsRef = useRef(null);
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash === "#products") {
+      productsRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
     const cards = data.map((card, index) => (
         <Card key={card.src} card={card} index={index} />
       ));
   return (
-    <div className='bg-black p-10'>
+    <div className='bg-black p-10' ref={productsRef}>
       <h1 className='text-white font-serif font-semibold text-3xl text-center mt-10'>PRODUCTS</h1>  
       <div className=''>
       <div className="w-full h-full ">

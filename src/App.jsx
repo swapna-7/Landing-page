@@ -11,8 +11,9 @@ function App() {
 
   return (
     <>
-    <NavBar />
      <BrowserRouter>
+     <Scroll/>
+    <NavBar />
       <Routes>
         <Route path="/" element={<Home/>} />
 =        </Routes>
